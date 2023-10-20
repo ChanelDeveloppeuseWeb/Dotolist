@@ -20,13 +20,13 @@ function validateForm() {
 }
 
 function showData() {
-  var peopleList = JSON.parse(localStorage.getItem("peopleList"));
-  console.log(typeof peopleList);
-  if (!peopleList) {
-    peopleList = [];
+  var taskList = JSON.parse(localStorage.getItem("taskList"));
+  console.log(typeof taskList);
+  if (!taskList) {
+    taskList = [];
   } 
   var html = "";
-  peopleList.forEach(function (element, index) {
+  taskList.forEach(function (element, index) {
     html += "<tr>";
     html += "<td>" + element.title + "</td>";
     html += "<td>" + element.description + "</td>";
@@ -50,20 +50,20 @@ function AddData(){
         let description = document.getElementById("description").value;
         let  date = document.getElementById("date").value;
 
-        let peopleList;
-        if (localStorage.getItem("peopleList") == null) {
-            peopleList = [];
+        let taskList;
+        if (localStorage.getItem("taskList") == null) {
+            taskList = [];
           } else {
-            peopleList = JSON.parse(localStorage.getItem("peopleList"));
+            taskList = JSON.parse(localStorage.getItem("taskList"));
           }
 
-          peopleList.push({
+          taskList.push({
             title: title,
             description: description,
             date : date,
         });
         
-localStorage.setItem("peopleList", JSON.stringify(peopleList));
+localStorage.setItem("taskList", JSON.stringify(taskList));
 showData();
 document.getElementById("title").value = "";
 document.getElementById("description").value = "";
@@ -71,17 +71,17 @@ document.getElementById("date").value = "";
 }
 }
 
-// function delete
+
 function deleteData(index){
-  let peopleList;
-    if (localStorage.getItem("peopleList") == null) {
-        peopleList = [];
+  let taskList;
+    if (localStorage.getItem("taskList") == null) {
+        taskList = [];
       } else {
-        peopleList = JSON.parse(localStorage.getItem("peopleList"));
+        taskList = JSON.parse(localStorage.getItem("taskList"));
       }
 
-      peopleList.splice(index,1);
-      localStorage.setItem("peopleList", JSON.stringify(peopleList));
+      taskList.splice(index,1);
+      localStorage.setItem("taskList", JSON.stringify(taskList));
       showData();
 }
 
@@ -89,24 +89,24 @@ function deleteData(index){
   document.getElementById("submit").style.display = "none";
   document.getElementById("Update").style.display = "block";
 
-  let peopleList;
-  if (localStorage.getItem("peopleList") == null) {
-    peopleList = [];
+  let taskList;
+  if (localStorage.getItem("taskList") == null) {
+    taskList = [];
   } else {
-    peopleList = JSON.parse(localStorage.getItem("peopleList"));
+    taskList = JSON.parse(localStorage.getItem("taskList"));
   }
 
-  document.getElementById("title").value = peopleList[index].title;
-  document.getElementById("description").value = peopleList[index].description;
-  document.getElementById("date").value = peopleList[index].date;
+  document.getElementById("title").value = taskList[index].title;
+  document.getElementById("description").value = taskList[index].description;
+  document.getElementById("date").value = taskList[index].date;
 
   document.querySelector("#Update").onclick = function(){
     if (validateForm()==true){
-      peopleList[index].title = document.getElementById("title").value;
-      peopleList[index].description = document.getElementById("description").value;
-      peopleList[index].date = document.getElementById("date").value;
+      taskList[index].title = document.getElementById("title").value;
+      taskList[index].description = document.getElementById("description").value;
+      taskList[index].date = document.getElementById("date").value;
 
-      localStorage.setItem("peopleList", JSON.stringify(peopleList));
+      localStorage.setItem("taskList", JSON.stringify(taskList));
       showData();
       document.getElementById("title").value = "";
       document.getElementById("description").value = "";
@@ -118,4 +118,18 @@ function deleteData(index){
   }
 
 
+}
+
+function search(){
+const search = document.getElementById("search")
+search.addEventListener("keyup", () => {
+  const input = search.value;
+  console.log(input);
+  const result = taskList.filter((element) =>
+    element.title.toLowerCase().includes(input.toLowerCase())
+  );
+  valuesearch = result;
+  console.log(valuesearch);
+    tasksList.innerHTML = "";
+})
 }
