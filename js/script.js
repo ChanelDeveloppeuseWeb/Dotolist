@@ -40,6 +40,8 @@ function showData() {
     html += "</tr>";
   });
   document.querySelector("#crudTable tbody").innerHTML = html;
+document.getElementById("Update").style.display = "none";
+
 }
 
 document.onload = showData();
@@ -68,6 +70,7 @@ showData();
 document.getElementById("title").value = "";
 document.getElementById("description").value = "";
 document.getElementById("date").value = "";
+
 }
 }
 
@@ -120,16 +123,20 @@ function deleteData(index){
 
 }
 
+// function search(){
+// const search = document.getElementById("search")
+// search.addEventListener("keyup", () => {
+//   const input = search.value;
+//   console.log(input);
+//   const result = taskList.filter((element) =>
+//     element.title.toLowerCase().includes(input.toLowerCase())
+//   );
+//   valuesearch = result;
+//   console.log(valuesearch);
+//     tasksList.innerHTML = "";
+// })
+// }
+
 function search(){
-const search = document.getElementById("search")
-search.addEventListener("keyup", () => {
-  const input = search.value;
-  console.log(input);
-  const result = taskList.filter((element) =>
-    element.title.toLowerCase().includes(input.toLowerCase())
-  );
-  valuesearch = result;
-  console.log(valuesearch);
-    tasksList.innerHTML = "";
-})
+  document.getElementById("date").innerHTML = date.find(taskList)
 }
