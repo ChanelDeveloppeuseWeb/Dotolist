@@ -30,8 +30,15 @@
         </div>
     </div>
     <div class="search">
-      <input type = "search" id="search" placeholder="recherche  la date d'une tache...">
+      <input type = "search" id="search" placeholder="recherche  les taches..." onkeyup="search()">
     </div>
+    <div id="search">
+      <label for="" class="date">filter une date
+      <input type = "date" id="searching" placeholder="recherche  la date..." onkeyup="fil()">
+      </label>
+      <button id="btn">ok</button>
+    </div>
+
 
     <table class="table" id="crudTable" >
         <thead>

@@ -79,7 +79,17 @@ button{
     width: 40%;
     outline: none;
     padding: 10px;
-    opacity: 0.3;
+    opacity: 0.6;
+    display: flex;
+    justify-content: center!important;
+    /* margin-right: 180px; */
+
+}
+#search:nth-child(1){
+    margin: auto;
+}
+#searching{
+    width: 50%;
 }
 #search::placeholder{
 text-align: center;
@@ -108,6 +118,10 @@ text-align: center;
 .btn_edit:hover{
     background-color: #85dbc2;
 }
+#btn{
+    background-color: #162a45;
+    width: 5%;
+}
 table{
     padding-top: 80px;
     width: 100%;
@@ -126,6 +140,15 @@ td{
     text-align: center;
 }
 
+#search{
+        
+    width: 100%;
+    margin-top: 15px;
+    
+}
+#search:nth-child(){
+    margin-right: 80px;
+}
 @media screen and (max-width:750px){
     .container_title{
         flex-direction: column-reverse;
@@ -146,7 +169,7 @@ td{
         text-align: center;
         transition: 1.5s;
         cursor: pointer;
-        margin-left:8px;
+        margin-left:15px;
     }
     input{
         margin-top: 25px;
@@ -190,8 +213,18 @@ td{
     }
     #search{
         
-        width: 100%;
+        width: 85%;
+        margin-top: 15px;
         
     }
+    #searching{
+        width: 50%;
+    }
+    #btn{
+        width: 15%;
+        margin-left: 130px;
+        margin-top: 25px;
+    }
+    
     
 }
