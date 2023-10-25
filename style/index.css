@@ -33,11 +33,14 @@ input{
 padding: 10px;
 outline: none;
 width: 100%;
-margin-top: 5px;
+margin-top: 9px;
 outline: none;
 opacity: 0.5;
         
 
+}
+svg{
+    color: #162a45 !important;
 }
 .day p{
     margin-top: 15px !important;
@@ -117,12 +120,23 @@ button{
 }
 .tache{
     width: 28%;
+    position: relative;
+}
+.img-fluid{
+    position: absolute;
+    left: 37%;
+    bottom: -26%;
+    cursor: pointer;
+}
+.img-fluid::hover{
+    display: none;
 }
 #searching{
     width: 10%;
 }
 #search::placeholder{
 text-align: center;
+/* margin-right: -22px !important; */
 }
 
 .edit{
