@@ -15,14 +15,20 @@
     <div class="container">
         <div class="content">
             <form>
-                <input type="text" placeholder="Entrez votre tache" id="title">
-                <input type="text" placeholder="Entrez votre description" id="description"></br>
+              <label for="">
+                Entrez votre tache
+                <input type="text" placeholder="" id="title">
+              </label>
+              <label for="">
+                Entrez la descrisption
+                <input type="text" placeholder="" id="description"></br>
+              </label>
                 <label for="" class="day">
-                 <p>Choisir une date</p> 
+                 Choisir une date
                   <input type="date" placeholder="jour" id="date" >
                 </label>
                 <br></br>
-                <div class="">
+                <div class="send">
                   <button class="" id="submit" onclick="AddData()">Enregistrer</button>
                   <button class="edit" id="Update">Modifier</button>
                 </div>
@@ -32,9 +38,9 @@
     <div class="tache">
       <input type = "search" id="search" placeholder="recherche  les taches..." onkeyup="search()">
     </div>
-    <p class="filter">filtrer une date</p>
     <div id="search">
       <label for="" class="date"> 
+        filtrer une date
       <input type = "date" id="searching" placeholder="recherche  la date..." onkeyup="fil()">
       </label>
     <button id="btn">ok</button>
