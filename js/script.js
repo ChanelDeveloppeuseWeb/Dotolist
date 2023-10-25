@@ -110,33 +110,6 @@ function updateData(index) {
 
 // function search
 
-function search() {
-  let input = document.getElementById("search").value
-  let local = localStorage.getItem("taskList")
-  let tasks
-  if(local === null){
-    tasks = []
-  }
-  else{
-    tasks = JSON.parse(local)
-  }
-  let recherches = tasks.filter((item)=>item.title.includes(input))
-  showInput(recherches)
-}
-
-function search() {
-  let input = document.getElementById("search").value
-  let local = localStorage.getItem("taskList")
-  let tasks
-  if(local === null){
-    tasks = []
-  }
-  else{
-    tasks = JSON.parse(local)
-  }
-  let recherches = tasks.filter((item)=>item.description.includes(input))
-  showInput(recherches)
-}
 
 function fil(){
   let input = document.getElementById("searching").value
@@ -155,6 +128,36 @@ function fil(){
   showInput(found)
   
 }
+
+function search() {
+  let input = document.getElementById("search").value
+  let local = localStorage.getItem("taskList")
+  let tasks
+  if(local === null){
+    tasks = []
+  }
+  else{
+    tasks = JSON.parse(local)
+  }
+  let recherches = tasks.filter((item)=>item.title.includes(input))
+  showInput(recherches)
+}
+
+function search() {
+  let input = document.getElementById("search").value
+  let infos = localStorage.getItem("taskList")
+  let task
+  if(infos === null){
+    task = []
+  }
+  else{
+    task = JSON.parse(infos)
+  }
+  let recherches = task.filter((item)=>item.description.includes(input))
+  showInput(recherches)
+}
+
+
 
 let btnOk = document.getElementById("btn")
 btnOk.addEventListener("click",fil)
