@@ -294,6 +294,9 @@ td{
         margin-top: 35px;
 
     }
+    .img-fluid{
+        display: none;
+    }
     
     
 }
